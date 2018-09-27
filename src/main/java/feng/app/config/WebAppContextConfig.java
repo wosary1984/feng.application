@@ -39,6 +39,8 @@ public class WebAppContextConfig implements WebMvcConfigurer {
 		registry.addResourceHandler("/img/**").addResourceLocations("classpath:/img/");
 		registry.addResourceHandler("/index.html").addResourceLocations("classpath:/");
 		registry.addResourceHandler("/headshots/**").addResourceLocations("classpath:/treant/treant-js-master/examples/headshots/");
+		
+		registry.addResourceHandler("/Bootstrap-video-player-jQuery-plugin-master/**").addResourceLocations("classpath:/Bootstrap-video-player-jQuery-plugin-master/");
 
 	}
 	

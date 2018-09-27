@@ -76,15 +76,6 @@ public class OrgService extends BaseService {
 		Company company = companyRepository.findByCompanyid(companyid);
 
 		return (Company) this.ContextCheckObject(Company.class, company, service);
-		// field check
-		// if (Company.class.isAnnotationPresent(EntityFiledCheck.class)) {
-		// Company dto = (Company) new TransformerAdapter(Company.class,
-		// this.service).transform2(Company.class,
-		// company, service.getObjectAccessRestriction(Company.class));
-		// return dto;
-		// } else {
-		// return company;
-		// }
 
 	}
 
@@ -193,7 +184,7 @@ public class OrgService extends BaseService {
 			employee.setPhonenumber(eo.isNull("phonenumber") ? "" : eo.getString("phonenumber"));
 			employee.setNationality(eo.isNull("nationality") ? "" : eo.getString("nationality"));
 		}
-		employee.setStatus(EmployeeStatus.NOTONBORAD.getName());
+		employee.setStatus(EmployeeStatus.NONE.getName());
 
 		employeeRepository.save(employee);
 		return (Employee) this.ContextCheckObject(Employee.class, employee, service);

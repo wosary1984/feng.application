@@ -27,7 +27,7 @@ public class UserController extends BaseController implements RequestPath{
 	 * @return
 	 * @throws Exception 
 	 */
-	@RequestMapping(path = PATH_USERS, method = RequestMethod.GET)
+	@RequestMapping(path = PATH_GET_ALL_USERS, method = RequestMethod.GET)
 	public Iterable<ApplicationUser> getUsers() throws Exception {
 		//throw new Exception("test");
 		return userService.getAllUsers();
@@ -39,7 +39,7 @@ public class UserController extends BaseController implements RequestPath{
 	 * @param userid
 	 * @return
 	 */
-	@RequestMapping(path = PATH_USER + "/{userid}", method = RequestMethod.GET)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_USER + "/{userid}", method = RequestMethod.GET)
 	ApplicationUser getUserByUserId(@PathVariable Long userid) {
 		
 		ApplicationUser user =userService.getUserByUserId(userid);
@@ -58,7 +58,7 @@ public class UserController extends BaseController implements RequestPath{
 	 * @return
 	 * @throws JSONException
 	 */
-	@RequestMapping(path = PATH_USER + "/{userid}", method = RequestMethod.POST)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_USER + "/{userid}", method = RequestMethod.POST)
 	public ApplicationUser updateUser(@PathVariable Long userid, @RequestBody String data) throws JSONException {
 		userService.updateUser(userid, data);
 		return userService.getUserByUserId(userid);
@@ -71,7 +71,7 @@ public class UserController extends BaseController implements RequestPath{
 	 * @return
 	 * @throws JSONException
 	 */
-	@RequestMapping(path = PATH_USER , method = RequestMethod.POST)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_USER , method = RequestMethod.POST)
 	public ApplicationUser createUser( @RequestBody String data) throws JSONException {
 		return userService.createUser(data);
 	}

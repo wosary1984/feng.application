@@ -41,6 +41,9 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
 				|| new AntPathRequestMatcher("/treant/**").matches(request)
 				|| new AntPathRequestMatcher("/img/**").matches(request)
 				|| new AntPathRequestMatcher("/headshots/**").matches(request)
+				|| new AntPathRequestMatcher("/Bootstrap-video-player-jQuery-plugin-master/**").matches(request)
+				
+				|| new AntPathRequestMatcher("/socket/**").matches(request)
 				) {
 			    
 			return;

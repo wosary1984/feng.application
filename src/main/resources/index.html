@@ -5,22 +5,57 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
-<title>Feng</title>
-	<link rel="stylesheet" href="treant/treant-js-master/Treant.css">
-    <link rel="stylesheet" href="treant/treant-js-master/examples/basic-example/basic-example.css">
+<title>Feng Application</title>
+
+<link rel="stylesheet" href="treant/treant-js-master/Treant.css">
+<link rel="stylesheet"
+	href="treant/treant-js-master/examples/basic-example/basic-example.css">
+<script src="treant/treant-js-master/vendor/raphael.js"></script>
+<script src="treant/treant-js-master/Treant.js"></script>
+<script
+	src="treant/treant-js-master/examples/basic-example/basic-example.js"></script>
+
+<link
+	href="Bootstrap-video-player-jQuery-plugin-master/assets/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="Bootstrap-video-player-jQuery-plugin-master/assets/css/video-default.css"
+	rel="stylesheet">
+<script type="text/javascript"
+	src="Bootstrap-video-player-jQuery-plugin-master/assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript"
+	src="Bootstrap-video-player-jQuery-plugin-master/assets/js/jquery.video-ui.js"></script>
+
 <script>
+	
 </script>
 </head>
 
-<body >
-<div class="chart" id="basic-example"></div>
-    <script src="treant/treant-js-master/vendor/raphael.js"></script>
-    <script src="treant/treant-js-master/Treant.js"></script>
-    
-    <script src="treant/treant-js-master/examples/basic-example/basic-example.js"></script>
-    <script>
-        new Treant( chart_config);
-    </script>
+<body>
+	<!-- <div class="chart" id="basic-example"></div> -->
+
+	<div class="videoUiWrapper">
+		<video width="1280" height="720" id="demo1">
+			<source
+				src="https://mondaystorageaccount.blob.core.chinacloudapi.cn/asset-195a5f04-737e-4694-ac69-72a4a65f455b/0EDC813D1ADC7F408562F9023F007C3C.mp4?sv=2012-02-12&sr=c&si=8b8f1400-df43-4cda-bbe9-473f9ad9b629&sig=ZRPlY3cy3QTYXqvYpUDG5f6CZfTw9CKK19GaNKFdnxs%3D&se=2018-08-31T06%3A44%3A24Z"
+				type="video/ogg">
+			<source src="https://mondaystorageaccount.blob.core.chinacloudapi.cn/asset-195a5f04-737e-4694-ac69-72a4a65f455b/0EDC813D1ADC7F408562F9023F007C3C.mp4?sv=2012-02-12&sr=c&si=8b8f1400-df43-4cda-bbe9-473f9ad9b629&sig=ZRPlY3cy3QTYXqvYpUDG5f6CZfTw9CKK19GaNKFdnxs%3D&se=2018-08-31T06%3A44%3A24Z" 
+				ype="video/mp4">
+		</video>
+	</div>
+
+	<script>
+		/* new Treant(chart_config); */
+		
+		 /* $('#demo1').videoUI(); */
+		$('#demo1').videoUI({
+			  'autoHide':false,
+			  'volumeMedia': 1,
+			  'progressMedia': true,
+			  'timerMedia':false,
+			  'fullscreenMedia':true
+			}); 
+	</script>
 </body>
 
 </html>

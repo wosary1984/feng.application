@@ -29,7 +29,7 @@ public class RoleController extends BaseController implements RequestPath{
 	 * 
 	 * @return
 	 */
-	@RequestMapping(path = PATH_ROLES, method = RequestMethod.GET)
+	@RequestMapping(path = PATH_GET_ALL_ROLES, method = RequestMethod.GET)
 	public Iterable<ApplicationRole> role() {
 		return roleService.getAllRoles();
 	}
@@ -40,7 +40,7 @@ public class RoleController extends BaseController implements RequestPath{
 	 * @param roleid
 	 * @return
 	 */
-	@RequestMapping(path = PATH_ROLE + "/{roleid}", method = RequestMethod.GET)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_ROLE + "/{roleid}", method = RequestMethod.GET)
 	ApplicationRole getRolebyRoleid(@PathVariable Long roleid) {
 		
 		ApplicationRole role =roleService.getRoleById(roleid).get();
@@ -59,7 +59,7 @@ public class RoleController extends BaseController implements RequestPath{
 	 * @throws JSONException
 	 */
 	
-	@RequestMapping(path = PATH_ROLE + "/{roleid}", method = RequestMethod.POST)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_ROLE + "/{roleid}", method = RequestMethod.POST)
 	public Optional<ApplicationRole> updateRole(@PathVariable Long roleid, @RequestBody String data) throws JSONException {
 		roleService.updateRole(roleid, data);
 		return roleService.getRoleById(roleid);
@@ -72,7 +72,7 @@ public class RoleController extends BaseController implements RequestPath{
 	 * @return
 	 * @throws JSONException
 	 */
-	@RequestMapping(path = PATH_ROLE , method = RequestMethod.POST)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_ROLE , method = RequestMethod.POST)
 	public ApplicationRole createRole( @RequestBody String data) throws JSONException {
 		return roleService.createRole(data);
 	}

@@ -2,7 +2,7 @@ package feng.app.repository.org.entity;
 
 public enum EmployeeStatus {
 
-	NOTONBORAD("NOTONBORAD", 1), ONBORAD("ONBORAD", 2), QUIT("DEPARTMENT", 3);
+	NONE("NONE",0), OFFERING("OFFERING",1), NOTONBORAD("NOTONBORAD", 2), ONBORAD("ONBORAD", 3), QUIT("QUIT", 4);
 	// 成员变量
 	private String name;
 	private int index;

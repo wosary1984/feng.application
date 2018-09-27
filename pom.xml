@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>feng.sport</groupId>
-	<artifactId>feng.sport</artifactId>
-	<version>0.0.3</version>
-	<name>feng.sport</name>
+	<groupId>feng.application</groupId>
+	<artifactId>feng.application</artifactId>
+	<version>0.0.4</version>
+	<name>feng.application</name>
 	<description>feng</description>
 
 	<properties>
@@ -139,6 +139,11 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<!-- websocket -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
 
 	</dependencies>
 	<build>

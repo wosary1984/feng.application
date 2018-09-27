@@ -1,4 +1,4 @@
-package feng.sport.controller;
+package feng.app.controller;
 
 
 import org.junit.Test;

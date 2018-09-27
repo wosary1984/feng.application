@@ -85,7 +85,7 @@ public class ContextCheckService {
 				continue;
 			}
 
-			logger.info("{} fields name:{}", clazz.getName(), pd.getName());
+			logger.debug("{} fields name:{}", clazz.getName(), pd.getName());
 			EntityFieldRegistration registration = new EntityFieldRegistration();
 			registration.setEntityname(clazz.getName());
 			registration.setFieldname(pd.getName());

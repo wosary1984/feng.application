@@ -17,7 +17,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
  * Embedded memory data source
  */
 @Configuration
-@Profile("local-memory")
+@Profile("h2")
 @EnableJpaAuditing(auditorAwareRef = "auditorAwareImp")
 public class EmbeddedDatabaseConfig {
 	/**

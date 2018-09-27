@@ -28,47 +28,47 @@ public class OrgController extends BaseController implements RequestPath {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(path = PATH_COMPANY, method = RequestMethod.GET)
+	@RequestMapping(path = PATH_GET_ALL_COMPANY, method = RequestMethod.GET)
 	public Iterable<Company> getCompanies() {
 		return orgService.getCompanies();
 	}
 
-	@RequestMapping(path = PATH_COMPANY, method = RequestMethod.POST)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_COMPANY, method = RequestMethod.POST)
 	public Company createCompany(@RequestBody String data) throws JSONException {
 		return orgService.createCompany(data);
 	}
 
-	@RequestMapping(path = PATH_COMPANY + "/{companyid}", method = RequestMethod.POST)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_COMPANY + "/{companyid}", method = RequestMethod.POST)
 	public Company updateCompany(@PathVariable Long companyid, @RequestBody String data) throws JSONException {
 		return orgService.updateCompany(companyid, data);
 	}
 
-	@RequestMapping(path = PATH_EMPLOYEES, method = RequestMethod.GET)
+	@RequestMapping(path = PATH_GET_ALL_EMPLOYEES, method = RequestMethod.GET)
 	public Iterable<Employee> getEmployees() {
 		return orgService.getEmployees();
 	}
 
-	@RequestMapping(path = PATH_EMPLOYEES + "/{employeeid}", method = RequestMethod.GET)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_EMPLOYEES + "/{employeeid}", method = RequestMethod.GET)
 	public Employee getEmployee(@PathVariable Long employeeid) {
 		return orgService.getEmployee(employeeid);
 	}
 
-	@RequestMapping(path = PATH_EMPLOYEES, method = RequestMethod.POST)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_EMPLOYEES, method = RequestMethod.POST)
 	public Employee createEmployee(@RequestBody String data) throws JSONException {
 		return orgService.createEmployee(data);
 	}
 
-	@RequestMapping(path = PATH_DEPARTMENT, method = RequestMethod.POST)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_DEPARTMENT, method = RequestMethod.POST)
 	public List<Department> createDepartment(@RequestBody String data) throws JSONException {
 		return orgService.createDepartment(data);
 	}
 
-	@RequestMapping(path = PATH_COMPANY + "/{companyid}", method = RequestMethod.GET)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_COMPANY + "/{companyid}", method = RequestMethod.GET)
 	public Company getCompany(@PathVariable Long companyid) {
 		return orgService.getCompany(companyid);
 	}
 
-	@RequestMapping(path = PATH_DEPARTMENT + "/{departmentid}", method = RequestMethod.GET)
+	@RequestMapping(path = PATH_GET_CREATE_EDIT_DEPARTMENT + "/{departmentid}", method = RequestMethod.GET)
 	public List<Department> getDepartment(@PathVariable Long departmentid) {
 		return orgService.getDepartment(departmentid);
 	}

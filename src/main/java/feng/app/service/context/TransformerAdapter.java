@@ -56,7 +56,7 @@ public class TransformerAdapter {
 		return this.targetClass;
 	}
 
-	//@SuppressWarnings({ "rawtypes", "unchecked" })
+	// @SuppressWarnings({ "rawtypes", "unchecked" })
 	public Object transform(Class<? extends Object> sourceClass, Object sourceObject, HashSet<String> exclusion) {
 		Object targetObject = BeanUtils.instantiateClass(this.targetClass);
 
@@ -82,7 +82,7 @@ public class TransformerAdapter {
 					if (value == null) {
 						continue;
 					}
-					logger.info("value type:{}", value.getClass());
+					logger.debug("value type:{}", value.getClass());
 
 					boolean ignore = spd.getReadMethod().isAnnotationPresent(TransformRecursionIgnore.class);
 
@@ -92,7 +92,7 @@ public class TransformerAdapter {
 						if (value instanceof java.util.List) {
 							List<Object> result = new ArrayList<>();
 							for (Object o : (List<?>) value) {
-								logger.info("object class:{}", o.getClass());
+								logger.debug("object class:{}", o.getClass());
 								boolean check = o.getClass().isAnnotationPresent(EntityFiledCheck.class);
 								if (check) {
 									HashSet<String> ex = service.getReadExclusionFields(o.getClass().getName());
@@ -162,7 +162,7 @@ public class TransformerAdapter {
 					if (value == null) {
 						continue;
 					}
-					logger.info("value type:{}", value.getClass());
+					logger.debug("value type:{}", value.getClass());
 
 					boolean ignore = spd.getReadMethod().isAnnotationPresent(TransformRecursionIgnore.class);
 					if (ignore) {
@@ -186,6 +186,24 @@ public class TransformerAdapter {
 
 							}
 							targetBW.setPropertyValue(name, (Object) result);
+						} else if (value instanceof java.util.Set) {
+							Set<Object> result = new HashSet<>();
+							for (Object o : (Set<?>) value) {
+								if (service.restrictionCheck(o, registration.getFieldrestriction())) {
+
+								} else {
+									boolean check = o.getClass().isAnnotationPresent(EntityFiledCheck.class);
+									if (check) {
+										Object dto = new TransformerAdapter(o.getClass(), this.service).transform2(
+												o.getClass(), o, service.getObjectAccessRestriction(o.getClass()));
+										result.add(dto);
+									} else {
+										result.add(o);
+									}
+								}
+							}
+							targetBW.setPropertyValue(name, (Object) result);
+
 						} else {
 							if (service.restrictionCheck(value, registration.getFieldrestriction())) {
 
