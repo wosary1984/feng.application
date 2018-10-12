@@ -1,10 +1,7 @@
 package feng.app.repository.msg;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -21,21 +18,20 @@ public class Message extends BaseEntity {
 
 	@Id
 	@Column(name = "messageid")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private String messageid;
-	
-	@Column(name="content")
+
+	@Column(name = "content")
 	String content;
-	
-	@Column(name="sender")
+
+	@Column(name = "sender", insertable = true, nullable = false)
 	String sender;
-	
-	
-	@Column(name="receiver")
+
+	@Column(name = "receiver", insertable = true, nullable = false)
 	String receiver;
-	
-	@Column(name="read")
-	boolean read;
+
+	@Column(name = "hasRead")
+	boolean hasRead;
 
 	public String getMessageid() {
 		return messageid;
@@ -70,10 +66,10 @@ public class Message extends BaseEntity {
 	}
 
 	public boolean isRead() {
-		return read;
+		return hasRead;
 	}
 
 	public void setRead(boolean read) {
-		this.read = read;
+		this.hasRead = read;
 	}
 }

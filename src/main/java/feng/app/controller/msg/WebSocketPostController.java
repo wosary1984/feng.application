@@ -1,12 +1,12 @@
-package feng.app.controller.ws;
+package feng.app.controller.msg;
 
 //import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class WebSocketPostController implements Runnable {
 
 	@Autowired

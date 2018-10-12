@@ -16,12 +16,16 @@ import feng.app.config.interceptor.HttpHandshakeInterceptor;
 @EnableWebSocketMessageBroker
 public class WebSocketConfig  implements WebSocketMessageBrokerConfigurer {
 	
+	public static final String endpoint = "/socket";
+	public static final String applicationDestinationPrefixes="/app-message";
+	public static final String simpleBroker="/server-message";
+	
 	@Autowired
     private HttpHandshakeInterceptor handshakeInterceptor;
  
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/socket")
+        registry.addEndpoint(endpoint)
         .setAllowedOrigins("*")
         .addInterceptors(handshakeInterceptor);
         //.withSockJS()
@@ -30,7 +34,7 @@ public class WebSocketConfig  implements WebSocketMessageBrokerConfigurer {
  
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.setApplicationDestinationPrefixes("/app-message");
-        registry.enableSimpleBroker("/server-message");
+        registry.setApplicationDestinationPrefixes(applicationDestinationPrefixes);
+        registry.enableSimpleBroker(simpleBroker);
     }
 }

@@ -136,7 +136,24 @@ insert IGNORE into t_user_ref_privilege(id,userid,fid) values(700,3,17);--##
 	insert IGNORE into t_privilege(fid,icon,link,name,subview,parentid) values(171,'fa fa-comments-o ','/message/my','My Messages',false,17);
 	update t_privilege set icon ='fa fa-comments-o' where fid ='171';
 	insert IGNORE into t_user_ref_privilege(id,userid,fid) values(701,3,171);--##
+	delete from  t_privilege_action where actionid = '1711';
+	insert IGNORE into t_privilege_action(actionid,actionpath,actionmethod,fid) values(1711,'/api/msg/users','GET',171);
+	delete from  t_privilege_action where actionid = '1712';
+	insert IGNORE into t_privilege_action(actionid,actionpath,actionmethod,fid) values(1712,'/api/msg/messages/*','GET',171);
+	insert IGNORE into t_privilege_action(actionid,actionpath,actionmethod,fid) values(1713,'/api/msg/send','POST',171);
+	
+	insert IGNORE into t_privilege_action(actionid,actionpath,actionmethod,fid) values(1714,'/api/msg/update','POST',171);
+	insert IGNORE into t_privilege_action(actionid,actionpath,actionmethod,fid) values(1715,'/api/msg/received/messages/*','GET',171);
 -------------------------------------------------------------------------------------------------------------------------------
+delete from  t_privilege where fid = '18';
+insert IGNORE into t_privilege(fid,icon,link,name,subview,parentid) values(18,'fa fa-cube','/d3','Chart',true,null);
+	insert IGNORE into t_user_ref_privilege(id,userid,fid) values(800,3,18);--##
+	delete from  t_privilege where fid = '181';
+	insert IGNORE into t_privilege(fid,icon,link,name,subview,parentid) values(181,'fa fa-line-chart','/d3/force-directed','Force Directed',false,18);
+	insert IGNORE into t_user_ref_privilege(id,userid,fid) values(801,3,181);--##
+	delete from  t_privilege where fid = '182';
+	insert IGNORE into t_privilege(fid,icon,link,name,subview,parentid) values(182,'fa fa-certificate','/d3/collision-detection','Collision Detection',false,18);
+	insert IGNORE into t_user_ref_privilege(id,userid,fid) values(802,3,182);--##
 			
 --- id generator
 insert IGNORE into t_id_generator(id, pk_name, pk_value) VALUES (1,'REF_USER_PRIVILEGE_PK', 1000); 

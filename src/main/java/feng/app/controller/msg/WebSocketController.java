@@ -1,4 +1,4 @@
-package feng.app.controller.ws;
+package feng.app.controller.msg;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;

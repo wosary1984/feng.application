@@ -242,4 +242,13 @@ public class CustomUserService implements UserDetailsService {
 		return dbuser;
 
 	}
+	
+	
+	public Iterable<ApplicationUser>getAllUsersExceptMe(){
+		ApplicationUser me = this.getLoginUser();
+		if(me == null) {
+			throw new NullException("login user not found!");
+		}
+		return userRepository.getAllUsersExceptMe(me.getUsername());
+	}
 }
