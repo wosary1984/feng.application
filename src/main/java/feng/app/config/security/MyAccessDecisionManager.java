@@ -29,7 +29,7 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
 		String path, method;
 		AntPathRequestMatcher matcher;
 		
-		if (new AntPathRequestMatcher("/my/session").matches(request)
+		if (new AntPathRequestMatcher("/my/session").matches(request) 
 				|| new AntPathRequestMatcher("/").matches(request)
 				|| new AntPathRequestMatcher("/**/swagger-ui.html").matches(request)
 				|| new AntPathRequestMatcher("/webjars/**").matches(request)
