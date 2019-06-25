@@ -60,7 +60,6 @@ public class SchedulerController extends BaseController {
 				object.put("state", schedulerService.getTriggerState(key));
 				object.put("expression", schedulerService.getCronTriggerExpression(key.getName(), GROUP_NAME));
 			} catch (JSONException | SchedulerException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return object;

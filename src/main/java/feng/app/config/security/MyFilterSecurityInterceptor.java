@@ -92,7 +92,6 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
 
 	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
 		
 	}
 

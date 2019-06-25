@@ -16,7 +16,6 @@ public class BaseRepositoryFactoryBean<R extends JpaRepository<T, I>, T, I exten
 
 	public BaseRepositoryFactoryBean(Class<? extends R> repositoryInterface) {
 		super(repositoryInterface);
-		// TODO Auto-generated constructor stub
 	}
 
 	@SuppressWarnings("rawtypes")

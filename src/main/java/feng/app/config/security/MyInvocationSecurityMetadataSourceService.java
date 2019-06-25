@@ -26,7 +26,6 @@ public class MyInvocationSecurityMetadataSourceService implements FilterInvocati
 
 	@Override
 	public Collection<ConfigAttribute> getAllConfigAttributes() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

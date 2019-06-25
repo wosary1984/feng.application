@@ -16,7 +16,6 @@ public class HelloJob implements BaseJob {
 	}
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
-		// TODO Auto-generated method stub
 		logger.error("Hello Job执行时间: " + new Date());  
 	}  
 }  

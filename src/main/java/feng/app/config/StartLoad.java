@@ -14,7 +14,6 @@ public class StartLoad implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
 		logger.info("start load...");
 
 	}

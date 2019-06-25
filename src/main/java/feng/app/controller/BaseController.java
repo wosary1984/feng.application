@@ -32,7 +32,6 @@ public abstract class BaseController {
 			root.put("success", true);
 			root.put("data", object);
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -47,7 +46,6 @@ public abstract class BaseController {
 			root.put("success", false);
 			root.put("message", message);
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
