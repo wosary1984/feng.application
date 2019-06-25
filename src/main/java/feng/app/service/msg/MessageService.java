@@ -74,7 +74,6 @@ public class MessageService extends BaseService {
 	public Iterable<Message> getMessages(String receiver) {
 
 		String sender = userService.getLoginUser().getUsername();
-		//TODO: set message to read
 		messageRepository.updateMsgBySendAndReceiver(receiver, sender);
 		
 		
@@ -115,7 +114,6 @@ public class MessageService extends BaseService {
 		message.setContent(object.isNull("content") ? "" : object.getString("content"));
 		message.setRead(false);
 		message = messageRepository.save(message);
-		// TODO: broadcast message to receiver
 		this.broadcastMessage(message.getReceiver(), message);
 		return message;
 	}

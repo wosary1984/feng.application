@@ -75,7 +75,6 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
 
 	@Override
 	public Class<?> getSecureObjectClass() {
-		// TODO Auto-generated method stub
 		return FilterInvocation.class;
 	}
 
@@ -87,7 +86,6 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		// TODO Auto-generated method stub
 		
 	}
 

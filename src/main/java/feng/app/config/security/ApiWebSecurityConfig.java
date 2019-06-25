@@ -89,7 +89,7 @@ public class ApiWebSecurityConfig extends WebSecurityConfigurerAdapter {
 		    // allow anonymous access treant resource, icon resource
 		    .antMatchers("/","/index.html","/resources/**","/treant/**","/icons/**").permitAll()
 		    //allow anonymous check his session
-        		.antMatchers("/my/session").permitAll()
+        	.antMatchers("/my/session").permitAll()
 			.antMatchers("/api/**").authenticated()
 			.requestMatchers(CorsUtils::isPreFlightRequest).permitAll();
 
@@ -123,14 +123,6 @@ public class ApiWebSecurityConfig extends WebSecurityConfigurerAdapter {
 		//拦截所有的请求进行定制的授权验证
 		http.addFilterBefore(myFilterSecurityInterceptor, FilterSecurityInterceptor.class);
 	}
-	
-//	@Override
-//    public void configure(WebSecurity webSecurity) throws Exception
-//    {
-//        webSecurity
-//        .ignoring()
-//        .antMatchers("/resources/**").anyRequest();
-//    }
 	
 
 	@Bean

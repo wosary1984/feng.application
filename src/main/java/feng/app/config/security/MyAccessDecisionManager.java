@@ -72,13 +72,11 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
 
 	@Override
 	public boolean supports(ConfigAttribute attribute) {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
